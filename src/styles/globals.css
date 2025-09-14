@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      sans-serif;
+  }
+
+  [dir="rtl"] {
+    font-family: Arial, sans-serif;
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+}
+
+@layer components {
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md transition-colors;
+  }
+
+  .sidebar-item-active {
+    @apply bg-gray-100 text-rak-primary;
+  }
+
+  .sidebar-item-inactive {
+    @apply text-gray-600 hover:bg-gray-50 hover:text-gray-800;
+  }
+
+  .form-input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-rak-light-blue focus:border-transparent;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-rak-primary mb-2;
+  }
+
+  .form-error {
+    @apply text-red-600 text-xs mt-1;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-rak-red to-red-800 hover:from-red-700 hover:to-red-900 text-white font-medium py-3 px-6 rounded-md transition-all duration-200 transform hover:scale-105 active:scale-95;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm border border-gray-200;
+  }
+}
+
+@layer utilities {
+  .rtl-flip {
+    transform: scaleX(-1);
+  }
+
+  .text-gradient {
+    background: linear-gradient(100.35deg, #eb3642 -17.3%, #990808 120.1%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.btn-extra-rounded {
+  border-radius: 50px !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
